@@ -52,7 +52,7 @@ var _ = Describe("Self-fencing with liveness probe", Serial, Label(tests.LabelDi
 			Skip("Test depth is lower than the amount requested for this test")
 		}
 		if !IsKind() {
-			Skip("This test is only run on local cluster")
+			Skip("This test only runs on kind clusters")
 		}
 	})
 
