@@ -2328,6 +2328,10 @@ jobs:
         needs.e2e-kind.result == 'failure'
       ) ||
       (
+        needs.e2e-k3d.result == 'success' ||
+        needs.e2e-k3d.result == 'failure'
+      ) ||
+      (
         needs.e2e-eks.result == 'success' ||
         needs.e2e-eks.result == 'failure'
       ) ||
