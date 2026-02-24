@@ -871,7 +871,11 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
       - name: Install K3D
         run: |
-          curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=${{ env.K3D_VERSION }} bash
+          K3D_URL="https://github.com/k3d-io/k3d/releases/download/${{ env.K3D_VERSION }}"
+          curl -sL "${K3D_URL}/k3d-linux-amd64" -o /tmp/k3d
+          curl -sL "${K3D_URL}/checksums.txt" -o /tmp/k3d-checksums.txt
+          grep '_dist/k3d-linux-amd64$' /tmp/k3d-checksums.txt | sed 's|_dist/k3d-linux-amd64|/tmp/k3d|' | sha256sum -c -
+          install /tmp/k3d /usr/local/bin/k3d
           k3d version
       - name: Install kubectl
         uses: azure/setup-kubectl@3e0aec4d80787158d308d7b364cb1b702e7feb7f # v4.0.0

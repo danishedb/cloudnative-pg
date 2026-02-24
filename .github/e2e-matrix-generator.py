@@ -125,7 +125,6 @@ except:
     print(f"Failed opening file: {K3D_VERSIONS_FILE}")
     exit(1)
 
-
 # Kubernetes versions on EKS to use during the tests
 try:
     with open(EKS_VERSIONS_FILE) as json_file:
