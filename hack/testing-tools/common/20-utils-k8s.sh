@@ -106,6 +106,7 @@ EOF
   # 3. Create patch file to enable operator profiling annotations
   # These annotations tell Pyroscope's agent what ports and profiles to scrape.
   local annotations="${TEMP_DIR}/pyroscope_annotations.yaml"
+
   cat >"${annotations}" <<- EOF
 spec:
     template:
