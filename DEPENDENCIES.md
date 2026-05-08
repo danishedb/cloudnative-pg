@@ -15,6 +15,7 @@ third-party dependencies.**
 Before introducing a new dependency to the project, maintainers must evaluate
 it against the following criteria:
 
+
 - **Necessity:** Does the dependency provide essential functionality that
   cannot be reasonably implemented within the project?
 - **Security Posture:** Preference is given to projects with high OpenSSF
